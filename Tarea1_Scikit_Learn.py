@@ -1,9 +1,12 @@
-# Importamos todo lo necesario para que no haga falta correr todo el codigo de ejemplo
+#Codigo de tarea en un solo bloque
+# https://github.com/Yom162/bie_rec_imagenes/blob/master/Tarea1_Iris_Scikit_Learn.py
+
 
 from sklearn import tree
 from sklearn.datasets import load_iris
 from sklearn.datasets import load_wine
 from sklearn.datasets import load_digits
+from sklearn.datasets import load_breast_cancer
 from sklearn.utils import shuffle
 from random import randrange
 from numpy import array_equal
@@ -13,6 +16,7 @@ print("¿Que base de datos desea usar?")
 print("1. Iris")
 print("2. Wine")
 print("3. Digits")
+print("4. Breast Cancer")
 db = int(input())
 
 # Dividimos en dos mitades aleatorias, iris_entreno e iris_test, el conjunto inicial
@@ -28,6 +32,10 @@ elif db == 3:
   total = load_digits()
   entreno = load_digits()
   test = load_digits()
+elif db == 4:
+  total = load_breast_cancer()
+  entreno = load_breast_cancer()
+  test = load_breast_cancer()
 else:
   print("Error al seleccionar la base de datos, asegurese de introducir un numero (1-3)")
 # La semilla nos permite mezclar los datos y los estados de la misma manera
